@@ -6,6 +6,9 @@ const expect = chai.expect;
 const compiler = require( '../dist/compiler' ).default;
 
 describe( 'compiler', () => {
+	// Increase timeout to 10 seconds – TS compilation could be slooooow.
+	this.timeout( 10000 );
+
 	it( 'is a function', () => {
 		expect( compiler ).to.be.a( 'function' );
 	} );
