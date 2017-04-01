@@ -4,6 +4,37 @@
 
 TypeScript compiler based on in-memory file system.
 
+## Installation
+
+Install it just like any other npm package:
+
+```bash
+npm install @comsemrel/typescript-vfs-compiler [--save-dev]
+```
+
+## Usage
+
+This package exports compiler, which can be used **only** inside JS code:
+
+```javascript
+const compiler = require( '@comsemrel/typescript-vfs-compiler' ).default;
+
+compiler( {
+	'index.ts': 'console.log( 42 )'
+} );
+```
+
+The first parameter is a "virtual filesystem" (what a fancy name!):
+
+```javascript
+{
+	'someFile.ts': 'file content',
+	'otherFile.ts': 'another file content'
+}
+```
+
+The second parameter is an object containg [compiler options](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
+
 ## License
 
 See [LICENSE](./LICENSE) file for details.
