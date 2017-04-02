@@ -8,23 +8,15 @@ function handleErrors( program, emitResult ) {
 	diagnostics.forEach( ( diagnostic ) => {
 		const { line, character } = diagnostic.file.getLineAndCharacterOfPosition( diagnostic.start );
 		const message = flattenDiagnosticMessageText( diagnostic.messageText, '\n' );
-		let prefix;
+		let prefix = chalk.blue( '[Info]' );
 
-		switch ( diagnostic.category ) {
-		case DiagnosticCategory.Message:
-			prefix = chalk.blue( '[Info] ' );
-			break;
-
-		case DiagnosticCategory.Warning:
+		if ( diagnostic.category === DiagnosticCategory.Warning ) {
 			prefix = chalk.yellow( '[Warning]' );
-			break;
-
-		case DiagnosticCategory.Error:
-			prefix = chalk.red( '[Error] ' );
-			break;
+		} else if ( diagnostic.category === DiagnosticCategory.Error ) {
+			prefix = chalk.red( '[Error]' );
 		}
 
-		console.log( `${ prefix }${ diagnostic.file.fileName } (${ line + 1 },${ character + 1 }): ${message}` ); // eslint-disable-line no-console
+		console.log( `${ prefix } ${ diagnostic.file.fileName } (${ line + 1 },${ character + 1 }): ${message}` ); // eslint-disable-line no-console
 
 		if ( diagnostic.category === DiagnosticCategory.Error ) {
 			throw new Error( 'Compilation was unsuccessful!' );
