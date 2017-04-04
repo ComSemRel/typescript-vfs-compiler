@@ -10,16 +10,19 @@ function handleErrors( program, emitResult ) {
 		const { line, character } = diagnostic.file.getLineAndCharacterOfPosition( diagnostic.start );
 		const message = flattenDiagnosticMessageText( diagnostic.messageText, '\n' );
 		let prefix = chalk.blue( '[Info]' );
+		let method = 'log';
 
 		if ( diagnostic.category === DiagnosticCategory.Warning ) {
 			prefix = chalk.yellow( '[Warning]' );
+			method = 'warn';
 		} else if ( diagnostic.category === DiagnosticCategory.Error ) {
 			prefix = chalk.red( '[Error]' );
+			method = 'error';
 
 			errored = true;
 		}
 
-		console.log( `${ prefix } ${ diagnostic.file.fileName } (${ line + 1 },${ character + 1 }): ${message}` ); // eslint-disable-line no-console
+		console[ method ]( `${ prefix } ${ diagnostic.file.fileName } (${ line + 1 },${ character + 1 }): ${message}` ); // eslint-disable-line no-console
 	} );
 
 	if ( errored || emitResult.emitSkipped ) {
