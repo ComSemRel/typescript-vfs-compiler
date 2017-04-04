@@ -42,7 +42,7 @@ describe( 'compiler', function() {
 	} );
 
 	it( 'emit errors', () => {
-		const spy = sinon.spy( console, 'log' );
+		const spy = sinon.spy( console, 'error' );
 
 		expect( () => {
 			compiler( {
@@ -50,7 +50,7 @@ describe( 'compiler', function() {
 			} );
 		} ).to.throw( Error, 'Compilation was unsuccessful!' );
 
-		expect( spy ).to.be.calledOnce;
+		expect( spy.callCount ).to.equal( 1 );
 
 		spy.restore();
 	} );
