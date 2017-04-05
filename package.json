@@ -1,6 +1,6 @@
 {
   "name": "@comsemrel/typescript-vfs-compiler",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript compiler based on in-memory file system",
   "main": "dist/compiler.js",
   "module": "dist/compiler.es2015.js",
