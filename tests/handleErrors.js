@@ -3,8 +3,6 @@
 const chai = require( 'chai' );
 const expect = chai.expect;
 const sinon = require( 'sinon' );
-const chalk = require( 'chalk' );
-console.log( chalk.red ); // eslint-disable-line no-console
 const handleErrors = require( '../dist/compiler' ).handleErrors;
 const compiler = require( '../dist/compiler' ).default;
 
