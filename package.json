@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/ComSemRel/typescript-vfs-compiler#readme",
   "devDependencies": {
-    "@comandeer/rollup-lib-bundler": "^0.1.1",
+    "@comandeer/rollup-lib-bundler": "^0.2.0",
     "chai": "^3.5.0",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.1.0",
