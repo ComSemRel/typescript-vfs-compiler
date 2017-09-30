@@ -38,15 +38,15 @@
   },
   "homepage": "https://github.com/ComSemRel/typescript-vfs-compiler#readme",
   "devDependencies": {
-    "@comandeer/rollup-lib-bundler": "^0.1.1",
+    "@comandeer/rollup-lib-bundler": "^0.3.0",
     "chai": "^4.1.2",
     "cz-conventional-changelog": "^2.0.0",
     "eslint": "^4.1.0",
     "in-publish": "^2.0.0",
     "mocha": "^3.2.0",
     "rimraf": "^2.6.1",
-    "rollup": "^0.45.0",
-    "sinon": "^2.1.0",
+    "rollup": "^0.50.0",
+    "sinon": "^4.0.0",
     "sinon-chai": "^2.9.0"
   },
   "dependencies": {
