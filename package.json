@@ -51,6 +51,6 @@
   },
   "dependencies": {
     "chalk": "^2.0.0",
-    "typescript": "^2.2.2"
+    "typescript": "^2.6.1"
   }
 }
