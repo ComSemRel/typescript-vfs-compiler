@@ -46,7 +46,7 @@
     "mocha": "^4.0.0",
     "rimraf": "^2.6.1",
     "rollup": "^0.50.0",
-    "sinon": "^4.0.0",
+    "sinon": "4.0.2",
     "sinon-chai": "^2.9.0"
   },
   "dependencies": {
